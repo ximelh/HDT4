@@ -40,10 +40,13 @@ public class DoubleLinkedList<E> extends AbstractLinkedList<E>{
      */
     public E removeFirst(){
         LinkDouble<E> linkReference = firstLink;
-        if(!(this.firstLink == null)){
-
-            firstLink = firstLink.getNext();   
-            firstLink.setPrevious(null);
+        if(this.firstLink != null){
+        	
+            this.firstLink = this.firstLink.getNext();
+            
+            if(this.firstLink != null) {
+            	this.firstLink.setPrevious(null);
+            }
         } 
         return linkReference.getObj();
     }

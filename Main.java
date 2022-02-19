@@ -28,7 +28,7 @@ public class Main {
             } else if (tipoStack.equalsIgnoreCase("LI")){
                 boolean valida2 = false;
                 while(!valida2){
-                    System.out.println("Escriba el tipo de lista que quiere:\n1. Escriba S si quiere simple\n2. Escriba D si quiere dooble\n");
+                    System.out.println("Escriba el tipo de lista que quiere:\n1. Escriba S si quiere simple\n2. Escriba D si quiere doble\n");
                     tipoList=scan.nextLine();
                     if (tipoList.equalsIgnoreCase("S")){
                         valida2=true;
