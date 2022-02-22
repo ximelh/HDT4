@@ -34,10 +34,10 @@ public class Controlador {
      * @param infix arraylist con operaciones en infix
      * @return posfix arraylist con operaciones en posfix
      */
-    public static ArrayList<String> infixAPosfix(ArrayList<String> infix){
+    public static ArrayList<String> infixAPosfix(ArrayList<String> infix, String tipoStack, String tipoList){
         ArrayList<String> posfix = new ArrayList<String>();
         for (String operacion:infix){
-           posfix.add(inAPostIndividual(operacion));
+           posfix.add(inAPostIndividual(operacion, tipoStack, tipoList));
         }
         return posfix;
     }
@@ -87,10 +87,11 @@ public class Controlador {
      * @param in expresion en infix
      * @return string hecho postfix
      */
-     public static String inAPostIndividual(String in){
+     public static String inAPostIndividual(String in, String tipoStack, String tipoList){
 
          String result = "";
-         StackVector<Character> stack = new StackVector<Character>();
+         StackFactory<Character> stackF = new StackFactory<Character>();
+         Stack<Character> stack = stackF.getStack(tipoStack,tipoList);
           
          for (int i = 0; i<in.length(); ++i){
              char c = in.charAt(i);

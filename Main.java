@@ -45,7 +45,7 @@ public class Main {
         }
 
         //obtener las operaciones pasadas ya a postfix y operadas
-        ArrayList<String> operaciones = Controlador.calcular(Controlador.infixAPosfix(Controlador.leerArchivo()),tipoStack,tipoList);
+        ArrayList<String> operaciones = Controlador.calcular(Controlador.infixAPosfix(Controlador.leerArchivo(),tipoStack,tipoList),tipoStack,tipoList);
         
         //imprimir resultados
         for (String operacion:operaciones){
