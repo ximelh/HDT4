@@ -9,12 +9,14 @@ public class DoubleLinkedList<E> extends AbstractLinkedList<E>{
     private LinkDouble<E> firstLink;
     private LinkDouble<E> lastLink;
 
+
     /**
      * Constructor.
      * Inicializa una lista soblemente encadenada
      */
     DoubleLinkedList(){
     }
+
 
     /**
      * Ingresa algo al inicio de la lista doblemente encadenada
@@ -26,11 +28,13 @@ public class DoubleLinkedList<E> extends AbstractLinkedList<E>{
             this.firstLink = this.lastLink = theNewLink;
             firstLink.setPrevious(null);
             lastLink.setNext(null);
+            size +=1;
         } else {
             theNewLink.setNext(firstLink);
             firstLink.setPrevious(theNewLink);
             theNewLink.setPrevious(null);
             firstLink = theNewLink;
+            size+=1;
         }
     }
 
@@ -47,6 +51,7 @@ public class DoubleLinkedList<E> extends AbstractLinkedList<E>{
             if(this.firstLink != null) {
             	this.firstLink.setPrevious(null);
             }
+            size -=1;
         } 
         return linkReference.getObj();
     }

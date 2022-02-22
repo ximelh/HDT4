@@ -38,6 +38,7 @@ public class SimpleLinkedList<E> extends AbstractLinkedList<E>{
     public void insertLink(E obj){
         LinkSimple<E> newLink = new LinkSimple<E>(obj);
         newLink.setNext(firstLink);
+        size +=1;
 
         firstLink = newLink;
     }
@@ -50,6 +51,7 @@ public class SimpleLinkedList<E> extends AbstractLinkedList<E>{
         LinkSimple<E> linkReference = firstLink;
         if(!this.isEmpty()){
             firstLink = firstLink.getNext();   
+            size -=1;
         } 
         return linkReference.getObj();
     }
@@ -96,10 +98,12 @@ public class SimpleLinkedList<E> extends AbstractLinkedList<E>{
             } else {
                 previousLink = currentLink;
                 currentLink = currentLink.getNext();
+
             }
         }
         if(currentLink == firstLink){
             firstLink = firstLink.getNext();
+            size -=1;
         } else{
             previousLink.setNext(currentLink.getNext());
         }

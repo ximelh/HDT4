@@ -7,7 +7,6 @@
 public class StackList<E> extends AbstractStack<E> {
 
     private LinkedList<E> stack;
-    private int size = 0;
 
     /**
      * Constructor.
@@ -17,21 +16,17 @@ public class StackList<E> extends AbstractStack<E> {
         ListFactory<E> lFactory = new ListFactory<E>();
         this.setStack(lFactory.getList(list));
     }
-
-    /**
-     * Establece el tamaño
-     * @param size
-     */
-    public void setSize(int size) {
-        this.size = size;
-    }
-
+   
     /**
      * Obtiene el stack
      * @return stack
      */
     public LinkedList<E> getStack() {
         return stack;
+    }
+    
+    public int size(){
+        return stack.getSize();
     }
 
     /**
@@ -46,7 +41,6 @@ public class StackList<E> extends AbstractStack<E> {
     public void add(E item) {
         // TODO Auto-generated method stub
         this.stack.insertLink(item);
-        this.size++;
         
     }
 
@@ -61,7 +55,6 @@ public class StackList<E> extends AbstractStack<E> {
             return null;
         } else {
             E e = stack.removeFirst();
-            this.size--;
             return e;
         }
     }
@@ -86,15 +79,6 @@ public class StackList<E> extends AbstractStack<E> {
     public boolean empty() {
         // TODO Auto-generated method stub
         return stack.isEmpty();
-    }
-
-    /**
-     * Revisa cuantos elementos hay en el stack
-     */
-    @Override
-    public int size() {
-        // TODO Auto-generated method stub
-        return size;
     }
     
 }

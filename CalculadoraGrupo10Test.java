@@ -20,7 +20,7 @@ class CalculadoraGrupo10Test {
 		try {
 			assertEquals(15,calculadora.calculate("1 2 + 4 * 3 +","VE",""),0.001,"Error en Calculate");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		assertEquals(30,calculadora.calculate("6 2 3 + *","VE",""),0.001,"Error en Calculate");
@@ -154,12 +154,17 @@ class CalculadoraGrupo10Test {
 		list.insertLink(4.0);
 		list.insertLink(9.0);
 		list.insertLink(5.0);
+		assertEquals(4,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(5,list.getFirstObj(),0.001,"Error al obtener primer objeto de la lista");
 		assertEquals(5,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(3,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(9,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(2,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(4,list.getFirstObj(),0.001,"Error al obtener primer objeto de la lista");
 		assertEquals(4,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(1,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(1,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(0,list.getSize(),0.001,"Error al obtener largo de la lista");
 	}
 	
 	/**
@@ -173,12 +178,17 @@ class CalculadoraGrupo10Test {
 		list.insertLink(4.0);
 		list.insertLink(9.0);
 		list.insertLink(5.0);
+		assertEquals(4,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(5,list.getFirstObj(),0.001,"Error al obtener primer objeto de la lista");
 		assertEquals(5,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(3,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(9,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(2,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(4,list.getFirstObj(),0.001,"Error al obtener primer objeto de la lista");
 		assertEquals(4,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(1,list.getSize(),0.001,"Error al obtener largo de la lista");
 		assertEquals(1,list.removeFirst(),0.001,"Error al quitar primer objeto de la lista");
+		assertEquals(0,list.getSize(),0.001,"Error al obtener largo de la lista");
 	}
 
 }
